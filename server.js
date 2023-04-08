@@ -99,8 +99,8 @@ server.get('/:id', async(req, res) => {
 
 //MongoDB connection
 mongoose.connect('mongodb+srv://admin:33669999ty@learnapi.jkhs6hq.mongodb.net/test').then(() => {
-    server.listen(3000, () => {
-        console.log('Listening to port 3000')
+    server.listen(process.env.PORT || 3000, () => {
+        console.log('Listening to port ' + (process.env.PORT || 3000))
     })
     console.log('connected')
 }).catch((err) => {
