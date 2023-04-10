@@ -98,11 +98,15 @@ server.get('/:id', async(req, res) => {
 })
 
 //MongoDB connection
-mongoose.connect('mongodb+srv://admin:33669999ty@learnapi.jkhs6hq.mongodb.net/test').then(() => {
+const dbUrl = process.env.MONGODB_URI;
+
+mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => {
     server.listen(process.env.PORT || 3000, () => {
-        console.log('Listening to port ' + (process.env.PORT || 3000))
-    })
-    console.log('connected')
-}).catch((err) => {
-    console.log(err)
-})
+      console.log('Listening to port ' + (process.env.PORT || 3000));
+    });
+    console.log('connected');
+  })
+  .catch((err) => {
+    console.log(err);
+  });
