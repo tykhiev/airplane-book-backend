@@ -100,7 +100,7 @@ server.get('/:id', async(req, res) => {
 //MongoDB connection
 // const dbUrl = process.env.MONGODB_URI;
 
-mongoose.connect(`mongodb+srv://admin:${process.env.password}@learnapi.jkhs6hq.mongodb.net/test`, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(`mongodb+srv://admin:33669999ty@learnapi.jkhs6hq.mongodb.net/test`, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     server.listen(process.env.PORT || 3000, () => {
       console.log('Listening to port ' + (process.env.PORT || 3000));
